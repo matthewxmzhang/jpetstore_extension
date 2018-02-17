@@ -1,5 +1,5 @@
 /**
- *    Copyright ${license.git.copyrightYears} the original author or authors.
+ *    Copyright 2010-2018 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -143,7 +143,7 @@ public class AccountActionBean extends AbstractActionBean {
   public Resolution signon() {
 
     account = accountService.getAccount(getUsername(), getPassword());
-   
+    System.out.println("test signon");
     if (account == null) {
       String value = "Invalid username or password.  Signon failed.";
       setMessage(value);

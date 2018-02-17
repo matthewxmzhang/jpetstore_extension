@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-       Copyright ${license.git.copyrightYears} the original author or authors.
+       Copyright 2010-2018 the original author or authors.
 
        Licensed under the Apache License, Version 2.0 (the "License");
        you may not use this file except in compliance with the License.
@@ -57,6 +57,16 @@
   </distributionManagement>
 
   <dependencies>
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-jms_1.1_spec</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.fusesource.stompjms</groupId>
+      <artifactId>stompjms-client</artifactId>
+      <version>1.18</version>
+    </dependency>
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
@@ -181,6 +191,11 @@
                 <url>${cargo.maven.containerUrl}</url>
               </zipUrlInstaller>
             </container>
+         <!--     <configuration>
+               <cargo.jvmargs> -Xdebug
+									-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000
+				</cargo.jvmargs>
+             </configuration> -->
             <daemon>
               <properties>
                 <cargo.daemon.url>http://localhost:18000</cargo.daemon.url>
