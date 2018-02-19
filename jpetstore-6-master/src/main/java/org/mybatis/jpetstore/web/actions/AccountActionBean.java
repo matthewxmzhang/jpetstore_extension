@@ -21,6 +21,12 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.mybatis.jpetstore.domain.Account;
+import org.mybatis.jpetstore.domain.Product;
+import org.mybatis.jpetstore.service.AccountService;
+import org.mybatis.jpetstore.service.CatalogService;
+import org.mybatis.jpetstore.service.CheckingAccountService;
+
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;
 import net.sourceforge.stripes.action.RedirectResolution;
@@ -28,11 +34,6 @@ import net.sourceforge.stripes.action.Resolution;
 import net.sourceforge.stripes.action.SessionScope;
 import net.sourceforge.stripes.integration.spring.SpringBean;
 import net.sourceforge.stripes.validation.Validate;
-
-import org.mybatis.jpetstore.domain.Account;
-import org.mybatis.jpetstore.domain.Product;
-import org.mybatis.jpetstore.service.AccountService;
-import org.mybatis.jpetstore.service.CatalogService;
 
 /**
  * @author Eduardo Macarron
@@ -54,6 +55,10 @@ public class AccountActionBean extends AbstractActionBean {
   private transient AccountService accountService;
   @SpringBean
   private transient CatalogService catalogService;
+  
+  @SpringBean
+  private CheckingAccountService checkingAccountService;
+  
 
   private Account account = new Account();
   private List<Product> myList;
@@ -143,7 +148,8 @@ public class AccountActionBean extends AbstractActionBean {
   public Resolution signon() {
 
     account = accountService.getAccount(getUsername(), getPassword());
-    System.out.println("test signon");
+    System.out.println("===============test signon=================================");
+    checkingAccountService.cancelAccount(88888888L);
     if (account == null) {
       String value = "Invalid username or password.  Signon failed.";
       setMessage(value);

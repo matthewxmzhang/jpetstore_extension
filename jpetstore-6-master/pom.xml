@@ -58,16 +58,6 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.apache.geronimo.specs</groupId>
-      <artifactId>geronimo-jms_1.1_spec</artifactId>
-      <version>1.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.fusesource.stompjms</groupId>
-      <artifactId>stompjms-client</artifactId>
-      <version>1.18</version>
-    </dependency>
-    <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
       <version>1.2</version>
@@ -155,6 +145,42 @@
       <version>4.4.2</version>
       <scope>test</scope>
     </dependency>
+    
+    <!-- zxm测试引入的依赖 start -->
+    <!-- 非Spring整合JMS第一次测试使用的引用
+     <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-jms_1.1_spec</artifactId>
+      <version>1.1</version>
+    </dependency> -->
+    <dependency>
+      <groupId>org.fusesource.stompjms</groupId>
+      <artifactId>stompjms-client</artifactId>
+      <version>1.18</version>
+    </dependency>
+    
+    <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+			<version>3.1.0.RELEASE</version>
+		</dependency>
+        <dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-jms_1.1_spec</artifactId>
+			<version>1.1.1</version>
+		</dependency> 
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-core</artifactId>
+			<version>5.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.4</version>
+		</dependency>
+	<!-- zxm测试引入的依赖 end -->	
+    
   </dependencies>
 
   <build>
