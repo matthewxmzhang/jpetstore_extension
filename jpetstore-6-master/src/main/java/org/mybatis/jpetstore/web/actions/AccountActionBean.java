@@ -150,6 +150,7 @@ public class AccountActionBean extends AbstractActionBean {
     account = accountService.getAccount(getUsername(), getPassword());
     System.out.println("===============test signon=================================");
     checkingAccountService.cancelAccount(88888888L);
+    System.out.println("test signon");
     if (account == null) {
       String value = "Invalid username or password.  Signon failed.";
       setMessage(value);

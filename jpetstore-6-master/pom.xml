@@ -57,6 +57,7 @@
   </distributionManagement>
 
   <dependencies>
+   
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
