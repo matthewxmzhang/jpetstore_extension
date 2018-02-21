@@ -13,21 +13,13 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.mybatis.jpetstore.service;
+package org.mybatis.matthew.service;
 
-import javax.annotation.Resource;
-
-import org.mybatis.matthew.service.SendMailService;
-
-
-public class SimpleCheckingAccountService implements CheckingAccountService {
+/*@Component("sendMailServiceAlias")
+public class SendMailServiceImpl{*/
+public class SendMailServiceImpl implements SendMailService{
 	
-//	  @Autowired
-	  @Resource(name="sendMailServiceAlias")
-	  private SendMailService sendMailService;
-
-    public void cancelAccount(Long accountId) {
-        System.out.println("Cancelling account [" + accountId + "]");
-        sendMailService.sendMail("test Jms send mail");
+    public void sendMail(String msg) {
+        System.out.println("Send message [" + msg + "]");
     }
 }
